@@ -1,3 +1,4 @@
+import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def traer_datasets():
@@ -24,10 +25,10 @@ def separar_dataset(x, y):
 def aplicar_one_hot_encoding(df, columnas):
     return pd.get_dummies(df_con_encoding, columnas, dummy_na=True, drop_first=True)
 
-def aplicar_ordinal_encodding(df, columnas)
+def aplicar_ordinal_encoding(df, columnas):
     oe = oe = OrdinalEncoder(dtype='int')
     return oe.fit_transform(df[columnas])
     
-def Feature_engineering_general(df):
+def feature_engineering_general(df):
     df['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
     df['presion_atmosferica_tarde'] = pd.to_numeric(df['presion_atmosferica_tarde'])
