@@ -29,7 +29,7 @@ def separar_dataset(x, y):
     return X_train, X_test, y_train, y_test
 
 def aplicar_dummy_variables_encoding(df, columnas):
-    df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=False, drop_first=True)
+    df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=True, drop_first=True)
     return df_encodeado
 
 def aplicar_ordinal_encoding(df, columnas):
@@ -42,10 +42,6 @@ def feature_engineering_general(df_train, df_test):
     
     X_train.fillna(np.nan, inplace = True)
     X_test.fillna(np.nan, inplace = True)
-    
-    features_poco_influyentes = ['id','dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion','rafaga_viento_max_velocidad',
-                                 'velocidad_viendo_temprano','velocidad_viendo_tarde']
-    
     media_temp_max = X_train['temp_max'].mean()
     media_temp_min = X_train['temp_min'].mean()
     media_temp_temprano = X_train['temperatura_temprano'].mean()
@@ -57,26 +53,22 @@ def feature_engineering_general(df_train, df_test):
     
     X_train['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
     X_train.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
+  
     
+        
+    features_poco_influyentes = ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion']
     eliminar_features(X_train, features_poco_influyentes)
-    X_train.reset_index()
+    
     X_train = aplicar_dummy_variables_encoding(X_train,['llovieron_hamburguesas_hoy'])
-    imputar_missings_KNN(X_train)
     
-    X_test['temp_max'].replace(np.nan, media_temp_max , inplace = True)
-    X_test['temp_min'].replace(np.nan, media_temp_min, inplace = True)
-    X_test['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
-    X_test['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano, inplace = True)
+    features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', 'mm_evaporados_agua', 'mm_lluvia_dia', 'nubosidad_tarde', 'nubosidad_temprano', 'presion_atmosferica_tarde', 'presion_atmosferica_temprano', 'rafaga_viento_max_velocidad','temp_max', 'temp_min', 'temperatura_tarde', 'temperatura_temprano',  'velocidad_viendo_tarde','velocidad_viendo_temprano', 'llovieron_hamburguesas_hoy_si']
     
-    X_test['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
-    X_test.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
+    X_train = imputar_missings_iterative(X_train, features_continuas)
+
+    X_train.reset_index()
+
     
-    eliminar_features(X_test, features_poco_influyentes)
-    
-    X_test.reset_index()
-    X_test = aplicar_dummy_variables_encoding(X_test, ['llovieron_hamburguesas_hoy'])
-    imputar_missings_KNN(X_test)
-    return X_train, X_test
+    return X_train, df_test
     
     
 def eliminar_features(df, columnas):
@@ -85,6 +77,14 @@ def eliminar_features(df, columnas):
 def imputar_missings_KNN(df):
     imputer = KNNImputer(n_neighbors = 3, weights="uniform")
     imputer.fit_transform(df)
+    
+def imputar_missings_iterative(df, columnas_continuas):
+    imputer = IterativeImputer()
+    array_imputeado = imputer.fit_transform(df[columnas_continuas])
+    df_imputeado = pd.DataFrame(array_imputeado, columns=columnas_continuas)
+    df_imputeado.set_index('id', inplace=True)
+    df_imputeado = df_imputeado.sort_values('id')
+    return df_imputeado
     
 def categorizar_humedad(humedad):
     if humedad >= 79:
