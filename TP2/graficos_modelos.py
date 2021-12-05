@@ -34,5 +34,5 @@ def graficar_auc_roc(y_test, y_pred):
     print(f"El valor de la metrica AUC-ROC para este modelo es: {roc_auc_score(y_test, y_pred)}")
 
     
-def mostrar_reporte_clasificacion(y_true, y_pred, labels):
-    print classification_report(y_true, y_pred, labels, digits=3)
+def mostrar_reporte_clasificacion(y_true, y_pred):
+    print (classification_report(y_true, y_pred, labels=['No llueven hamburguesas al dia siguiente', 'Llueven hamburguesas al dia siguiente'] , digits=3))
