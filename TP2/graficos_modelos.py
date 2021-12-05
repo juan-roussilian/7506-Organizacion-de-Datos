@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, roc_curve, auc, roc_auc_score, classification_report
 
 def graficar_matriz_confusion(y_true, y_pred):
@@ -11,6 +12,15 @@ def graficar_matriz_confusion(y_true, y_pred):
     plt.set_xlabel("Predicho")
     plt.set_ylabel("Real")
     plt.show()
+
+    
+def graficar_auc_roc(y_test, y_pred):    
+    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
+    plot_roc(fpr, tpr, thresholds)
+    print(f"El valor de la metrica AUC-ROC para este modelo es: {roc_auc_score(y_test, y_pred)}")
+    
+def mostrar_reporte_clasificacion(y_true, y_pred):
+    print (classification_report(y_true, y_pred, labels=['no', 'si'] , digits=3))
     
 def plot_roc(_fpr, _tpr, x):
     roc_auc = auc(_fpr, _tpr)
@@ -27,20 +37,3 @@ def plot_roc(_fpr, _tpr, x):
     plt.title('Receiver operating characteristic')
     plt.legend(loc="lower right")
     plt.show()
-    
-def mapear_si_no_1_0(x):
-    if(x == 'si')
-        return 1
-    return 0
-    
-def graficar_auc_roc(y_test, y_pred):
-    y_test = y_test.map({'si': 1, 'no': 0})
-    y_pred = mapear_si_no_1_0(y_pred)
-    
-    fpr, tpr, thresholds = roc_curve(y_test, y_pred)
-    plot_roc(fpr, tpr, thresholds)
-    print(f"El valor de la metrica AUC-ROC para este modelo es: {roc_auc_score(y_test, y_pred)}")
-
-    
-def mostrar_reporte_clasificacion(y_true, y_pred):
-    print (classification_report(y_true, y_pred, labels=['no', 'si'] , digits=3))

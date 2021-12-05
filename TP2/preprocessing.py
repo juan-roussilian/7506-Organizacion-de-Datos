@@ -89,6 +89,7 @@ def imputar_missings_iterative(df, columnas_continuas):
     df_imputeado = pd.DataFrame(array_imputeado, columns=columnas_continuas)
     df_imputeado.set_index('id', inplace=True)
     df_imputeado = df_imputeado.sort_values('id')
+    
     return df_imputeado
     
 def categorizar_humedad(humedad):
