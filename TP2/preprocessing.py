@@ -39,32 +39,38 @@ def aplicar_ordinal_encoding(df, columnas):
 def feature_engineering_general(df_train, df_test):
     X_train = df_train.copy(deep=True)
     X_test = df_test.copy(deep=True)
-    
     X_train.fillna(np.nan, inplace = True)
     X_test.fillna(np.nan, inplace = True)
     media_temp_max = X_train['temp_max'].mean()
     media_temp_min = X_train['temp_min'].mean()
     media_temp_temprano = X_train['temperatura_temprano'].mean()
     media_vel_viento_temprano = X_train['velocidad_viendo_temprano'].mean()
+    
+    features_poco_influyentes = ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion']
+    features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', 'mm_evaporados_agua', 'mm_lluvia_dia', 'nubosidad_tarde', 'nubosidad_temprano', 'presion_atmosferica_tarde', 'presion_atmosferica_temprano', 'rafaga_viento_max_velocidad','temp_max', 'temp_min', 'temperatura_tarde', 'temperatura_temprano',  'velocidad_viendo_tarde','velocidad_viendo_temprano', 'llovieron_hamburguesas_hoy_si','llovieron_hamburguesas_hoy_nan']
+    
     X_train['temp_max'].replace(np.nan, media_temp_max , inplace = True)
     X_train['temp_min'].replace(np.nan, media_temp_min, inplace = True)
     X_train['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
     X_train['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano , inplace = True)
-    
     X_train['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
     X_train.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
-  
-    features_poco_influyentes = ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion']
     eliminar_features(X_train, features_poco_influyentes)
-    
     X_train = aplicar_dummy_variables_encoding(X_train,['llovieron_hamburguesas_hoy'])
-    
-    features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', 'mm_evaporados_agua', 'mm_lluvia_dia', 'nubosidad_tarde', 'nubosidad_temprano', 'presion_atmosferica_tarde', 'presion_atmosferica_temprano', 'rafaga_viento_max_velocidad','temp_max', 'temp_min', 'temperatura_tarde', 'temperatura_temprano',  'velocidad_viendo_tarde','velocidad_viendo_temprano', 'llovieron_hamburguesas_hoy_si','llovieron_hamburguesas_hoy_nan']
-    
     X_train = imputar_missings_iterative(X_train, features_continuas)
-
     X_train.reset_index()
-
+    
+    
+    X_test['temp_max'].replace(np.nan, media_temp_max , inplace = True)
+    X_test['temp_min'].replace(np.nan, media_temp_min, inplace = True)
+    X_test['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
+    X_test['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano , inplace = True)
+    X_test['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
+    X_test.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
+    eliminar_features(X_test, features_poco_influyentes)
+    X_test = aplicar_dummy_variables_encoding(X_test,['llovieron_hamburguesas_hoy'])
+    X_test = imputar_missings_iterative(X_test, features_continuas)
+    X_test.reset_index()
     
     return X_train, X_test
     
