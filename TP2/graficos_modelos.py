@@ -28,11 +28,19 @@ def plot_roc(_fpr, _tpr, x):
     plt.legend(loc="lower right")
     plt.show()
     
+def mapear_si_no_1_0(x):
+    if(x == 'si')
+        return 1
+    return 0
+    
 def graficar_auc_roc(y_test, y_pred):
+    y_test = y_test.map({'si': 1, 'no': 0})
+    y_pred = mapear_si_no_1_0(y_pred)
+    
     fpr, tpr, thresholds = roc_curve(y_test, y_pred)
     plot_roc(fpr, tpr, thresholds)
     print(f"El valor de la metrica AUC-ROC para este modelo es: {roc_auc_score(y_test, y_pred)}")
 
     
 def mostrar_reporte_clasificacion(y_true, y_pred):
-    print (classification_report(y_true, y_pred, labels=['No llueven hamburguesas al dia siguiente', 'Llueven hamburguesas al dia siguiente'] , digits=3))
+    print (classification_report(y_true, y_pred, labels=['no', 'si'] , digits=3))
