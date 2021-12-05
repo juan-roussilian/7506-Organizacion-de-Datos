@@ -19,13 +19,13 @@ def traer_datasets():
 
     
     df_sin_target = df.copy().drop('llovieron_hamburguesas_al_dia_siguiente', 1)
-    solo_target = df.copy()['llovieron_hamburguesas_al_dia_siguiente'].to_frame()
+    solo_target = df[['id','llovieron_hamburguesas_al_dia_siguiente']].copy()
     
     return df, df_sin_target, solo_target
 
 
 def separar_dataset(x, y):
-    X_train, X_test, y_train, y_test= train_test_split(x, y, test_size=0.1, random_state=0, stratify=y)
+    X_train, X_test, y_train, y_test= train_test_split(x, y, test_size=0.1, random_state=0, stratify=y['llovieron_hamburguesas_al_dia_siguiente'])
     return X_train, X_test, y_train, y_test
 
 def aplicar_dummy_variables_encoding(df, columnas):
@@ -59,7 +59,7 @@ def feature_engineering_general(df_train, df_test):
     X_train = aplicar_dummy_variables_encoding(X_train,['llovieron_hamburguesas_hoy'])
     X_train = imputar_missings_iterative(X_train, features_continuas)
     X_train.reset_index()
-    
+    X_train.sort_values(by=['id'], inplace=True, ascending=True)
     
     X_test['temp_max'].replace(np.nan, media_temp_max , inplace = True)
     X_test['temp_min'].replace(np.nan, media_temp_min, inplace = True)
@@ -71,6 +71,7 @@ def feature_engineering_general(df_train, df_test):
     X_test = aplicar_dummy_variables_encoding(X_test,['llovieron_hamburguesas_hoy'])
     X_test = imputar_missings_iterative(X_test, features_continuas)
     X_test.reset_index()
+    X_test.sort_values(by=['id'], inplace=True, ascending=True)
     
     return X_train, X_test
     
