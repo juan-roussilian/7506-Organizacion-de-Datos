@@ -1,23 +1,25 @@
+import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, roc_curve, auc, roc_auc_score, classification_report
 
 def graficar_matriz_confusion(y_true, y_pred):
-    names = sorted(set(y_true))
-    cm = confusion_matrix(y_true, y_pred, names)
-    df_cm = pd.DataFrame(cm, names, names)
+    nombres = sorted(set(y_true))
+    matriz = confusion_matrix(y_true, y_pred, nombres)
+    df_matriz = pd.DataFrame(matriz, nombres, nombres)
 
     plt.figure(dpi=100)
-    sns.heatmap(df_cm, annot=True, annot_kws={"size": 16}, fmt='g', square=True)
-    plt.set_title("Matriz de confusion")
-    plt.set_xlabel("Predicho")
-    plt.set_ylabel("Real")
+    sns.heatmap(df_matriz, annot=True, annot_kws={"size": 16}, fmt='g', square=True)
+    plt.title("Matriz de confusion")
+    plt.xlabel("Predicho")
+    plt.ylabel("Real")
     plt.show()
 
     
 def graficar_auc_roc(y_test, y_pred):    
     fpr, tpr, thresholds = roc_curve(y_test, y_pred)
     plot_roc(fpr, tpr, thresholds)
-    print(f"El valor de la metrica AUC-ROC para este modelo es: {roc_auc_score(y_test, y_pred)}")
+    print(f"AUC-ROC para este modelo es: {roc_auc_score(y_test, y_pred)}")
     
 def mostrar_reporte_clasificacion(y_true, y_pred):
     print (classification_report(y_true, y_pred, labels=['no', 'si'] , digits=3))
