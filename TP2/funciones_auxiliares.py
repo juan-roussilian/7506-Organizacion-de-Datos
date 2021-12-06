@@ -33,7 +33,7 @@ def separar_dataset(x, y):
 def encontrar_hiperparametros_RGSCV(clf, params, X, y):
     x_np = X.to_numpy()
     y_np = y.to_numpy()
-    rgscv = RandomizedSearchCV(clf, params, n_iter=100, scoring='roc_auc', n_jobs=-1, return_train_score=True).fit(x_np, y_np)
+    rgscv = RandomizedSearchCV(clf, params, n_iter=100, scoring='roc_auc', n_jobs=-2, return_train_score=True).fit(x_np, y_np)
     return rgscv.best_params_
 
 def mapear_target_binario(x):
