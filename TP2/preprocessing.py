@@ -23,6 +23,12 @@ def traer_datasets():
     
     return df, df_sin_target, solo_target
 
+def traer_dataset_prediccion_final():
+    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1mR_JNN0-ceiB5qV42Ff9hznz0HtWaoPF3B9zNGoNPY8/export?format=csv', low_memory=False)
+    df.sort_values(by=['id'], inplace=True, ascending=True)
+    df.set_index('id', inplace=True)
+    return df
+
 
 def separar_dataset(x, y):
     X_train, X_test, y_train, y_test= train_test_split(x, y, test_size=0.1, random_state=0, stratify=y['llovieron_hamburguesas_al_dia_siguiente'])
@@ -35,43 +41,47 @@ def aplicar_dummy_variables_encoding(df, columnas):
 def aplicar_ordinal_encoding(df, columnas):
     oe = OrdinalEncoder(dtype='int')
     return oe.fit_transform(df[columnas])
-    
-def feature_engineering_general(df_train, df_test):
-    X_train = df_train.copy(deep=True)
-    X_test = df_test.copy(deep=True)
-    X_train.fillna(np.nan, inplace = True)
-    X_test.fillna(np.nan, inplace = True)
-    media_temp_max = X_train['temp_max'].mean()
-    media_temp_min = X_train['temp_min'].mean()
-    media_temp_temprano = X_train['temperatura_temprano'].mean()
-    media_vel_viento_temprano = X_train['velocidad_viendo_temprano'].mean()
+
+def preprocesar_df(df_a_preprocesar):
+    df = df_a_preprocesar.copy(deep=True)
+    df.fillna(np.nan, inplace = True)
     
     features_poco_influyentes = ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion']
     features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', 'mm_evaporados_agua', 'mm_lluvia_dia', 'nubosidad_tarde', 'nubosidad_temprano', 'presion_atmosferica_tarde', 'presion_atmosferica_temprano', 'rafaga_viento_max_velocidad','temp_max', 'temp_min', 'temperatura_tarde', 'temperatura_temprano',  'velocidad_viendo_tarde','velocidad_viendo_temprano', 'llovieron_hamburguesas_hoy_si','llovieron_hamburguesas_hoy_nan']
     
-    X_train['temp_max'].replace(np.nan, media_temp_max , inplace = True)
-    X_train['temp_min'].replace(np.nan, media_temp_min, inplace = True)
-    X_train['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
-    X_train['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano , inplace = True)
-    X_train['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
-    X_train.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
-    eliminar_features(X_train, features_poco_influyentes)
-    X_train = aplicar_dummy_variables_encoding(X_train,['llovieron_hamburguesas_hoy'])
-    X_train = imputar_missings_iterative(X_train, features_continuas)
-    X_train.reset_index()
-    X_train.sort_values(by=['id'], inplace=True, ascending=True)
+    df['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
+    df.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
+    eliminar_features(df, features_poco_influyentes)
+    df = aplicar_dummy_variables_encoding(df,['llovieron_hamburguesas_hoy'])
+    df = imputar_missings_iterative(df, features_continuas)
+    df.reset_index()
+    df.sort_values(by=['id'], inplace=True, ascending=True)
+    return df
     
-    X_test['temp_max'].replace(np.nan, media_temp_max , inplace = True)
-    X_test['temp_min'].replace(np.nan, media_temp_min, inplace = True)
-    X_test['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
-    X_test['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano , inplace = True)
-    X_test['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
-    X_test.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
-    eliminar_features(X_test, features_poco_influyentes)
-    X_test = aplicar_dummy_variables_encoding(X_test,['llovieron_hamburguesas_hoy'])
-    X_test = imputar_missings_iterative(X_test, features_continuas)
-    X_test.reset_index()
-    X_test.sort_values(by=['id'], inplace=True, ascending=True)
+def feature_engineering_general(df_train, df_test):
+    #X_train = df_train.copy(deep=True)
+    #X_test = df_test.copy(deep=True)
+    #X_train.fillna(np.nan, inplace = True)
+    #X_test.fillna(np.nan, inplace = True)
+    #media_temp_max = X_train['temp_max'].mean()
+    #media_temp_min = X_train['temp_min'].mean()
+    #media_temp_temprano = X_train['temperatura_temprano'].mean()
+    #media_vel_viento_temprano = X_train['velocidad_viendo_temprano'].mean()
+    
+    #X_test['temp_max'].replace(np.nan, media_temp_max , inplace = True)
+    #X_test['temp_min'].replace(np.nan, media_temp_min, inplace = True)
+    #X_test['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
+    #X_test['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano , inplace = True)
+    #X_test['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
+    #X_test.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
+    #eliminar_features(X_test, features_poco_influyentes)
+    #X_test = aplicar_dummy_variables_encoding(X_test,['llovieron_hamburguesas_hoy'])
+    #X_test = imputar_missings_iterative(X_test, features_continuas)
+    #X_test.reset_index()
+    #X_test.sort_values(by=['id'], inplace=True, ascending=True)
+    
+    X_train = preprocesar_df(df_train)
+    X_test = preprocesar_df(df_test)
     
     return X_train, X_test
     
