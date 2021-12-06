@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split, RandomizedSearchCV
+from sklearn.model_selection import train_test_split, RandomizedSearchCV, GridSearchCV
 
 def traer_datasets():
     df_1 = pd.read_csv(
@@ -32,6 +32,10 @@ def separar_dataset(x, y):
 
 def encontrar_hiperparametros_RGSCV(clf, params, X, y):
     rgscv = RandomizedSearchCV(clf, params, n_iter=100, scoring='roc_auc', n_jobs=-2, return_train_score=True).fit(x_np, y_np)
+    return rgscv.best_params_
+
+def encontrar_hiperparametros_GSCV(clf, params, X, y):
+    gsvc = GridSearchCV(modelo, params, scoring='roc_auc', n_jobs=-2, cv=5).fit(array_probabilidades, y)    
     return rgscv.best_params_
 
 def mapear_target_binario(x):
