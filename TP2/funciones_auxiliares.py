@@ -31,8 +31,6 @@ def separar_dataset(x, y):
     return X_train, X_test, y_train, y_test
 
 def encontrar_hiperparametros_RGSCV(clf, params, X, y):
-    x_np = X.to_numpy()
-    y_np = y.to_numpy()
     rgscv = RandomizedSearchCV(clf, params, n_iter=100, scoring='roc_auc', n_jobs=-2, return_train_score=True).fit(x_np, y_np)
     return rgscv.best_params_
 
