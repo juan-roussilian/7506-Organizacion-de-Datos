@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import KNNImputer, IterativeImputer
+from sklearn.manifold import TSNE, MDS
 
 def aplicar_dummy_variables_encoding(df, columnas):
     df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=True, drop_first=True)
@@ -55,6 +56,11 @@ def feature_engineering_general(df_train, df_test):
     
     return X_train, X_test
     
+def reduccion_TSNE(df):
+    return TSNE(n_components=6).fit_transform(df)
+
+def reduccion_MDS(df):
+    return MDS(n_components=6).fit_transform(df)
     
 def eliminar_features(df, columnas):
     df.drop(columnas, axis=1, inplace=True)
