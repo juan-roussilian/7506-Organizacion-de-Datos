@@ -24,7 +24,6 @@ def traer_datasets():
 def traer_dataset_prediccion_final():
     df = pd.read_csv('https://docs.google.com/spreadsheets/d/1mR_JNN0-ceiB5qV42Ff9hznz0HtWaoPF3B9zNGoNPY8/export?format=csv', low_memory=False)
     df.sort_values(by=['id'], inplace=True, ascending=True)
-    df.set_index('id', inplace=True)
     return df
 
 def separar_dataset(x, y):
@@ -41,3 +40,9 @@ def mapear_target_binario(x):
     if(x == 'si'):
         return 1
     return 0
+
+def exportar_prediccion_final(ids, predicciones, nombre_modelo):
+    with open("predicciones/"+nombre_modelo+".csv", "w") as archivo:
+        archivo.write("id,tiene_alto_valor_adquisitivo\n")       
+        for medicion in range(len(ids)):
+            archivo.write(str(ids[medicion]) + "," + str(predicciones[medicion]) + "\n")
