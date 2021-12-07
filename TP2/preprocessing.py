@@ -13,23 +13,29 @@ def aplicar_ordinal_encoding(df, columnas):
     oe = OrdinalEncoder(dtype='int')
     return oe.fit_transform(df[columnas])
 
-def preprocesar_df(df_a_preprocesar):
+def feature_engineering_basico(df_a_preprocesar, features_eliminables):
     df = df_a_preprocesar.copy(deep=True)
     df.fillna(np.nan, inplace = True)
     
-    features_poco_influyentes = ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion']
     features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', 'mm_evaporados_agua', 'mm_lluvia_dia', 'nubosidad_tarde', 'nubosidad_temprano', 'presion_atmosferica_tarde', 'presion_atmosferica_temprano', 'rafaga_viento_max_velocidad','temp_max', 'temp_min', 'temperatura_tarde', 'temperatura_temprano',  'velocidad_viendo_tarde','velocidad_viendo_temprano', 'llovieron_hamburguesas_hoy_si','llovieron_hamburguesas_hoy_nan']
     
     df['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
     df.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
-    eliminar_features(df, features_poco_influyentes)
+    eliminar_features(df, features_eliminables)
     df = aplicar_dummy_variables_encoding(df,['llovieron_hamburguesas_hoy'])
     df = imputar_missings_iterative(df, features_continuas)
     df.reset_index()
     df.sort_values(by=['id'], inplace=True, ascending=True)
     return df
+
+def preprocesamiento_GNB(dataframes):
+    dataframes_procesados = []
+    for df in dataframes:
+        dataframes_procesados.append(feature_engineering_basico(df, ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion', 'llovieron_hamburguesas_hoy']))
+    return dataframes_procesados
     
-def feature_engineering_general(df_train, df_test):
+    
+def preprocesamiento_basico(dataframes):
     #X_train = df_train.copy(deep=True)
     #X_test = df_test.copy(deep=True)
     #X_train.fillna(np.nan, inplace = True)
@@ -50,11 +56,11 @@ def feature_engineering_general(df_train, df_test):
     #X_test = imputar_missings_iterative(X_test, features_continuas)
     #X_test.reset_index()
     #X_test.sort_values(by=['id'], inplace=True, ascending=True)
-    
-    X_train = preprocesar_df(df_train)
-    X_test = preprocesar_df(df_test)
-    
-    return X_train, X_test
+    dataframes_procesados = []
+    for df in dataframes:
+        dataframes_procesados.append(feature_engineering_basico(df, ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion']))
+    return dataframes_procesados
+
     
 def reduccion_TSNE(df):
     return TSNE(n_components=6).fit_transform(df)

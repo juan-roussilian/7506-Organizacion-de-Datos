@@ -30,12 +30,12 @@ def separar_dataset(x, y):
     X_train, X_test, y_train, y_test= train_test_split(x, y, test_size=0.1, random_state=0, stratify=y['llovieron_hamburguesas_al_dia_siguiente'])
     return X_train, X_test, y_train, y_test
 
-def encontrar_hiperparametros_RGSCV(clf, params, X, y):
+def encontrar_hiperparametros_RGSCV(clf, params, x_np, y_np):
     rgscv = RandomizedSearchCV(clf, params, n_iter=100, scoring='roc_auc', n_jobs=-2, return_train_score=True).fit(x_np, y_np)
     return rgscv.best_params_
 
-def encontrar_hiperparametros_GSCV(clf, params, X, y):
-    gsvc = GridSearchCV(modelo, params, scoring='roc_auc', n_jobs=-2, cv=5).fit(array_probabilidades, y)    
+def encontrar_hiperparametros_GSCV(clf, params, x_np, y_np):
+    gsvc = GridSearchCV(modelo, params, scoring='roc_auc', n_jobs=-2, cv=5).fit(x_np, y_np)    
     return rgscv.best_params_
 
 def mapear_target_binario(x):
