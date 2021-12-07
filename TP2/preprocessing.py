@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import KNNImputer, IterativeImputer
 from sklearn.manifold import TSNE, MDS
+from sklearn.preprocessing import StandardScaler
 
 def aplicar_dummy_variables_encoding(df, columnas):
     df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=True, drop_first=True)
@@ -76,7 +77,7 @@ def preprocesamiento_basico(dataframes):
         dataframes_procesados.append(df_procesado)
     return dataframes_procesados
 
-def normalizar_datos(dataframes[]):
+def normalizar_datos(dataframes):
     
     df_train_normalizado = dataframes[0].copy()
     df_normalizados = []
