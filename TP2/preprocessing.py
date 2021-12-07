@@ -63,7 +63,7 @@ def preprocesamiento_basico(dataframes):
 
     
 def reduccion_TSNE(df):
-    return TSNE(n_components=6).fit_transform(df)
+    return TSNE(n_components=3).fit_transform(df)
 
 def reduccion_MDS(df):
     return MDS(n_components=6).fit_transform(df)
