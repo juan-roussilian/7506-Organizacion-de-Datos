@@ -76,17 +76,18 @@ def preprocesamiento_basico(dataframes):
         dataframes_procesados.append(df_procesado)
     return dataframes_procesados
 
-def normalizar_datos(df_train, df_test):
-    df_train_normalizado = df_train.copy()
-    df_test_normalizado = df_test.copy()
+def normalizar_datos(dataframes[]):
+    
+    df_train_normalizado = dataframes[0].copy()
+    df_normalizados = []
 
     scaler = StandardScaler()
     scaler.fit(df_train_normalizado)
     
-    df_train_normalizado = scaler.transform(X_train_normalizado)
-    df_test_normalizado = scaler.transform(X_test_normalizado)
+    for df in dataframes:
+        df_normalizados.append(scaler.transform(df.copy()))
     
-    return df_train_normalizado, df_test_normalizado
+    return df_normalizados
 
     
 def reduccion_TSNE(df):
