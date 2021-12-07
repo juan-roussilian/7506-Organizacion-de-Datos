@@ -35,8 +35,8 @@ def encontrar_hiperparametros_RGSCV(clf, params, x_np, y_np):
     return rgscv.best_params_
 
 def encontrar_hiperparametros_GSCV(clf, params, x_np, y_np):
-    gsvc = GridSearchCV(modelo, params, scoring='roc_auc', n_jobs=-2, cv=5).fit(x_np, y_np)    
-    return rgscv.best_params_
+    gsvc = GridSearchCV(clf, params, scoring='roc_auc', n_jobs=-2, cv=5).fit(x_np, y_np)    
+    return gsvc.best_params_
 
 def mapear_target_binario(x):
     if(x == 'si'):
