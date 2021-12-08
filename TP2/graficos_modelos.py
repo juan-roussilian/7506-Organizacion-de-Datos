@@ -24,16 +24,22 @@ def graficar_auc_roc(y_test, y_pred):
 def mostrar_reporte_clasificacion(y_true, y_pred):
     print (classification_report(y_true, y_pred, labels=['no', 'si'] , digits=3))
 
-def graficar_curva_aprendizaje(historia_aprendizaje):
-    train_acc = historia_aprendizaje.history["accuracy"]
-    val_acc = historia_aprendizaje.history["val_accuracy"]
-    fig = plt.figure(figsize=(12, 6), dpi=100)
-    plt.plot(train_acc, label="training")
-    plt.plot(val_acc, label="validation")
-    plt.ylim(0, 1)
+def graficar_curva_aprendizaje(historia_aprendizaje, metrica):
+    
+    nombre_metrica_train = f'{metrica}'
+    nombre_metrica_val = f'val_{metrica}'
+    metrica_train = historia_aprendizaje.history[nombre_metrica_train]
+    metrica_val = historia_aprendizaje.history[nombre_metrica_val]
+    
+    plt.figure(dpi=125, figsize=(7, 2))
+    plt.plot(metrica_train, label=f'Training {metrica}')
+    plt.plot(metrica_val, label=f'Validation {metrica}')
+    plt.title(f'{metrica} del modelo')
+    plt.ylabel(f'{metrica}')
+    plt.xlabel('Epoch')
     plt.legend()
     plt.show()
-    
+        
 def plot_roc(_fpr, _tpr, x):
     roc_auc = auc(_fpr, _tpr)
 
