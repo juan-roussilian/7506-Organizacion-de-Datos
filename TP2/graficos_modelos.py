@@ -23,6 +23,16 @@ def graficar_auc_roc(y_test, y_pred):
     
 def mostrar_reporte_clasificacion(y_true, y_pred):
     print (classification_report(y_true, y_pred, labels=['no', 'si'] , digits=3))
+
+def graficar_curva_aprendizaje(historia_aprendizaje):
+    train_acc = historia_aprendizaje.history["accuracy"]
+    val_acc = historia_aprendizaje.history["val_accuracy"]
+    fig = plt.figure(figsize=(12, 6), dpi=100)
+    plt.plot(train_acc, label="training")
+    plt.plot(val_acc, label="validation")
+    plt.ylim(0, 1)
+    plt.legend()
+    plt.show()
     
 def plot_roc(_fpr, _tpr, x):
     roc_auc = auc(_fpr, _tpr)
