@@ -47,26 +47,6 @@ def preprocesamiento_GNB(dataframes):
     
     
 def preprocesamiento_basico(dataframes):
-    #X_train = df_train.copy(deep=True)
-    #X_test = df_test.copy(deep=True)
-    #X_train.fillna(np.nan, inplace = True)
-    #X_test.fillna(np.nan, inplace = True)
-    #media_temp_max = X_train['temp_max'].mean()
-    #media_temp_min = X_train['temp_min'].mean()
-    #media_temp_temprano = X_train['temperatura_temprano'].mean()
-    #media_vel_viento_temprano = X_train['velocidad_viendo_temprano'].mean()
-    
-    #X_test['temp_max'].replace(np.nan, media_temp_max , inplace = True)
-    #X_test['temp_min'].replace(np.nan, media_temp_min, inplace = True)
-    #X_test['temperatura_temprano'].replace(np.nan, media_temp_temprano , inplace = True)
-    #X_test['velocidad_viendo_temprano'].replace(np.nan, media_vel_viento_temprano , inplace = True)
-    #X_test['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
-    #X_test.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
-    #eliminar_features(X_test, features_poco_influyentes)
-    #X_test = aplicar_dummy_variables_encoding(X_test,['llovieron_hamburguesas_hoy'])
-    #X_test = imputar_missings_iterative(X_test, features_continuas)
-    #X_test.reset_index()
-    #X_test.sort_values(by=['id'], inplace=True, ascending=True)
     dataframes_procesados = []
     for df in dataframes:
         df_procesado = feature_engineering_basico(
@@ -110,12 +90,4 @@ def imputar_missings_iterative(df, columnas_continuas):
     df_imputeado = pd.DataFrame(array_imputeado, columns=columnas_continuas)
     df_imputeado.set_index('id', inplace=True)
     df_imputeado = df_imputeado.sort_values('id')
-    
     return df_imputeado
-    
-def categorizar_humedad(humedad):
-    if humedad >= 79:
-        return "alta"
-    elif humedad <= 30:
-        return "baja"
-    return "media"
