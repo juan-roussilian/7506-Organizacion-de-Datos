@@ -31,7 +31,7 @@ def graficar_curva_aprendizaje(historia_aprendizaje, metrica):
     metrica_train = historia_aprendizaje.history[nombre_metrica_train]
     metrica_val = historia_aprendizaje.history[nombre_metrica_val]
     
-    plt.figure(dpi=125, figsize=(7, 2))
+    plt.figure(dpi=130, figsize=(7, 2))
     plt.plot(metrica_train, label=f'Training {metrica}')
     plt.plot(metrica_val, label=f'Validation {metrica}')
     plt.title(f'{metrica} del modelo')
