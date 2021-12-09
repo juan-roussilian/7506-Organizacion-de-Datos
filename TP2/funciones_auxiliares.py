@@ -43,6 +43,11 @@ def mapear_target_binario(x):
         return 1
     return 0
 
+def mapear_target_binario_a_categorico(x):
+    if(x == 1):
+        return 'si'
+    return 'no'
+
 def exportar_prediccion_final(ids, predicciones, nombre_modelo):
     with open("predicciones/"+nombre_modelo+".csv", "w") as archivo:
         archivo.write("id,tiene_alto_valor_adquisitivo\n")       
