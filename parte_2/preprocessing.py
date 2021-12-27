@@ -57,12 +57,25 @@ def preprocesamiento_basico(dataframes):
         dataframes_procesados.append(df_procesado)
     return dataframes_procesados
 
-def normalizar_datos(dataframes):
+def normalizar_datos_standard(dataframes):
     
     df_train_normalizado = dataframes[0].copy()
     df_normalizados = []
 
     scaler = StandardScaler()
+    scaler.fit(df_train_normalizado)
+    
+    for df in dataframes:
+        df_normalizados.append(scaler.transform(df.copy()))
+    
+    return df_normalizados
+
+def normalizar_datos_minmax(dataframes):
+    
+    df_train_normalizado = dataframes[0].copy()
+    df_normalizados = []
+
+    scaler = MinMaxScaler()
     scaler.fit(df_train_normalizado)
     
     for df in dataframes:
