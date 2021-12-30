@@ -16,58 +16,6 @@ def aplicar_ordinal_encoding(df, columnas):
     oe = OrdinalEncoder(dtype='int')
     return oe.fit_transform(df[columnas])
 
-def feature_engineering_basico(df_a_preprocesar, features_eliminables, imputer, dummy_llovieron_hamburguesas_hoy):
-    df = df_a_preprocesar.copy(deep=True)
-    df.fillna(np.nan, inplace = True)
-    
-    if(dummy_llovieron_hamburguesas_hoy):
-        df = aplicar_dummy_variables_encoding(df, ['llovieron_hamburguesas_hoy'])
-        features_continuas.append('llovieron_hamburguesas_hoy_si')
-        features_continuas.append('llovieron_hamburguesas_hoy_nan')
-    
-    df['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
-    df.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
-    eliminar_features(df, features_eliminables)
-        
-    df = imputar_missings_iterative(df, imputer)
-    df.reset_index()
-    df.sort_values(by=['id'], inplace=True, ascending=True)
-    return df
-
-def preprocesamiento_GNB(dataframes, imputer=null):
-    dataframes_procesados = []
-    
-    if(imputer == null):
-        dataframes[0].fillna(np.nan, inplace = True)
-        imputer = entrenar_iterative_imputer(dataframes[0])
-    
-    for df in dataframes:
-        df_procesado = feature_engineering_basico(
-            df, 
-            ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion', 'llovieron_hamburguesas_hoy'], 
-            imputer,
-            dummy_llovieron_hamburguesas_hoy=False
-        )
-        dataframes_procesados.append(df_procesado)
-    return dataframes_procesados, imputer
-    
-    
-def preprocesamiento_basico(dataframes, imputer=null):
-    dataframes_procesados = []
-    
-    if(imputer == null):
-        imputer = entrenar_iterative_imputer(dataframes[0])
-    
-    for df in dataframes:
-        df_procesado = feature_engineering_basico(
-            df, 
-            ['dia','barrio', 'direccion_viento_tarde', 'direccion_viento_temprano', 'rafaga_viento_max_direccion'],
-            imputer,
-            dummy_llovieron_hamburguesas_hoy=True
-        )
-        dataframes_procesados.append(df_procesado)
-    return dataframes_procesados, imputer
-
 def normalizar_datos_standard(df_train):
     df_a_normalizar = df_train.copy()
    
@@ -83,6 +31,15 @@ def normalizar_datos_minmax(df_train):
     scaler.fit(df_a_normalizar)
     return scaler
 
+
+def limpiar_datos(df_a_limpiar):
+    df = df_a_limpiar.copy(deep=True)
+    df.fillna(np.nan, inplace = True)
+    
+    df['presion_atmosferica_tarde'].replace('.+\..+\..+', np.nan, inplace=True, regex=True)
+    df.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
+    return df
+
     
 def reduccion_TSNE(df):
     return TSNE(n_components=3).fit_transform(df)
@@ -95,6 +52,7 @@ def reduccion_PCA(df, dim_destino):
     
 def eliminar_features(df, columnas):
     df.drop(columnas, axis=1, inplace=True)
+    df.reset_index()
 
 def imputar_missings_KNN(df):
     imputer = KNNImputer(n_neighbors = 3, weights="uniform")
@@ -109,5 +67,5 @@ def imputar_missings_iterative(df, imputer_entrenado):
     array_imputeado = imputer_entrenado.transform(df[FEATURES_CONTINUAS])
     df_imputeado = pd.DataFrame(array_imputeado, columns=FEATURES_CONTINUAS)
     df_imputeado.set_index('id', inplace=True)
-    df_imputeado = df_imputeado.sort_values('id')
+    df_imputeado = df_imputeado.sort_values(by=['id'], inplace=True, ascending=True) 
     return df_imputeado
