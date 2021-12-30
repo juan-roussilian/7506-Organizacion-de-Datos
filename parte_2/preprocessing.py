@@ -89,6 +89,9 @@ def reduccion_TSNE(df):
 
 def reduccion_MDS(df):
     return MDS(n_components=6).fit_transform(df)
+
+def reduccion_PCA(df, dim_destino):
+    return PCA(n_components=dim_destino).fit_transform(df)
     
 def eliminar_features(df, columnas):
     df.drop(columnas, axis=1, inplace=True)
