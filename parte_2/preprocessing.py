@@ -16,21 +16,23 @@ def aplicar_ordinal_encoding(df, columnas):
     oe = OrdinalEncoder(dtype='int')
     return oe.fit_transform(df[columnas])
 
-def normalizar_datos_standard(df_train):
+def entrenar_normalizador_standard(df_train):
     df_a_normalizar = df_train.copy()
    
     scaler = StandardScaler()
     scaler.fit(df_a_normalizar)
     return scaler
 
-def normalizar_datos_minmax(df_train):
-    
+def entrenar_normalizador_minmax(df_train):
     df_a_normalizar = df_train.copy()
 
     scaler = MinMaxScaler()
     scaler.fit(df_a_normalizar)
     return scaler
 
+def normalizar_dataframe(df, scaler):
+    df_normalizado = scaler.transform(df.copy())
+    return df_normalizado
 
 def limpiar_datos(df_a_limpiar):
     df = df_a_limpiar.copy(deep=True)
