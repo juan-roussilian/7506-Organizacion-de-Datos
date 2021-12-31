@@ -42,7 +42,6 @@ def limpiar_datos(df_a_limpiar):
     df.astype({'presion_atmosferica_tarde': 'float64'}).dtypes
     return df
 
-    
 def reduccion_TSNE(df):
     return TSNE(n_components=3).fit_transform(df)
 
@@ -62,12 +61,12 @@ def imputar_missings_KNN(df):
     
 def entrenar_iterative_imputer(df_train):
     imputer = IterativeImputer()
-    imputer.fit(df_train[FEATURES_CONTINUAS])
+    imputer.fit(df_train[features_continuas])
     return imputer
     
 def imputar_missings_iterative(df, imputer_entrenado):
-    array_imputeado = imputer_entrenado.transform(df[FEATURES_CONTINUAS])
-    df_imputeado = pd.DataFrame(array_imputeado, columns=FEATURES_CONTINUAS)
+    array_imputeado = imputer_entrenado.transform(df[features_continuas])
+    df_imputeado = pd.DataFrame(array_imputeado, columns=features_continuas)
     df_imputeado.set_index('id', inplace=True)
     df_imputeado = df_imputeado.sort_values(by=['id'], inplace=True, ascending=True) 
     return df_imputeado
