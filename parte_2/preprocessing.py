@@ -68,5 +68,5 @@ def imputar_missings_iterative(df, imputer_entrenado):
     array_imputeado = imputer_entrenado.transform(df[features_continuas])
     df_imputeado = pd.DataFrame(array_imputeado, columns=features_continuas)
     df_imputeado.set_index('id', inplace=True)
-    df_imputeado = df_imputeado.sort_values(by=['id'], inplace=True, ascending=True) 
+    df_imputeado = df_imputeado.sort_values('id') 
     return df_imputeado
