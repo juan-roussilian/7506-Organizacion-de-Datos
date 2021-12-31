@@ -12,10 +12,6 @@ def aplicar_dummy_variables_encoding(df, columnas):
     df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=True, drop_first=True)
     return df_encodeado
 
-def aplicar_ordinal_encoding(df, columnas):
-    oe = OrdinalEncoder(dtype='int')
-    return oe.fit_transform(df[columnas])
-
 def entrenar_normalizador_standard(df_train):
     df_a_normalizar = df_train.copy()
    
