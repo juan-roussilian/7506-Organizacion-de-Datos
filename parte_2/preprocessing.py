@@ -4,14 +4,24 @@ from sklearn.model_selection import train_test_split
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import KNNImputer, IterativeImputer
 from sklearn.manifold import TSNE, MDS
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.feature_extraction import FeatureHasher
 
 features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', 'mm_evaporados_agua', 'mm_lluvia_dia', 'nubosidad_tarde', 'nubosidad_temprano', 'presion_atmosferica_tarde', 'presion_atmosferica_temprano', 'rafaga_viento_max_velocidad','temp_max', 'temp_min', 'temperatura_tarde', 'temperatura_temprano',  'velocidad_viendo_tarde','velocidad_viendo_temprano']
 
 def aplicar_dummy_variables_encoding(df, columnas):
     df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=True, drop_first=True)
     return df_encodeado
+
+def aplicar_hashing_trick(df, columna, nuevas_features):
+    df.reset_index(inplace=True)
+    hasher = FeatureHasher(n_features=nuevas_features, input_type='string')
+    features_hashadas = hasher.fit_transform(df[columna].astype(str)).todense()
+    features_hashadas = pd.DataFrame(features_hashadas).add_prefix(columna+'_')
+    df_concatenado = df.join(features_hashadas)
+    df_concatenado = df_concatenado.drop(columna, axis=1)
+    return df_concatenado
 
 def entrenar_normalizador_standard(df_train):
     df_a_normalizar = df_train.copy()
