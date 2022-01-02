@@ -13,15 +13,16 @@ features_continuas = ['id','horas_de_sol','humedad_tarde', 'humedad_temprano', '
 def aplicar_dummy_variables_encoding(df, columnas):
     df_encodeado = pd.get_dummies(df, columns=columnas, dummy_na=True, drop_first=True)
     return df_encodeado
-
-def aplicar_hashing_trick(df, columna, nuevas_features):
+    
+def aplicar_hashing_trick(df, columnas, nuevas_features):
     df.reset_index(inplace=True)
-    hasher = FeatureHasher(n_features=nuevas_features, input_type='string')
-    features_hashadas = hasher.fit_transform(df[columna].astype(str)).todense()
-    features_hashadas = pd.DataFrame(features_hashadas).add_prefix(columna+'_')
-    df_concatenado = df.join(features_hashadas)
-    df_concatenado = df_concatenado.drop(columna, axis=1)
-    return df_concatenado
+    for columna, n_nuevas_features in zip(columnas, nuevas_features):
+        hasher = FeatureHasher(n_features=n_nuevas_features, input_type='string')
+        features_hashadas = hasher.fit_transform(df[columna].astype(str)).todense()
+        features_hashadas = pd.DataFrame(features_hashadas).add_prefix(columna+'_')
+        df = df.join(features_hashadas)
+        df = df.drop(columna, axis=1)
+    return df
 
 def entrenar_normalizador_standard(df_train):
     df_a_normalizar = df_train.copy()
