@@ -26,9 +26,14 @@ def traer_dataset_prediccion_final():
     df.sort_values(by=['id'], inplace=True, ascending=True)
     return df
 
-def separar_dataset(x, y):
-    X_train, X_test, y_train, y_test= train_test_split(x, y, test_size=0.1, random_state=0, stratify=y['llovieron_hamburguesas_al_dia_siguiente'])
+def separar_dataset(x, y, test_size=0.1):
+    X_train, X_test, y_train, y_test= train_test_split(x, y, test_size, random_state=0, stratify=y['llovieron_hamburguesas_al_dia_siguiente'])
     return X_train, X_test, y_train, y_test
+
+def separar_dataset_train_val_holdout(x, y):
+    X_train, X_test, y_train, y_test = separar_dataset(x, y, test_size=0.3)
+    X_test, X_holdout, y_test, y_holdout = separar_dataset(X_test, y_test, test_size=0.333)
+    return X_train, X_test, X_holdout, y_train, y_test, y_holdout
 
 def encontrar_hiperparametros_RGSCV(clf, params, x_np, y_np):
     rgscv = RandomizedSearchCV(clf, params, n_iter=100, scoring='roc_auc', n_jobs=-2, return_train_score=True).fit(x_np, y_np)
