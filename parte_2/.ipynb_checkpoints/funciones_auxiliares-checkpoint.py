@@ -31,8 +31,8 @@ def separar_dataset(x, y, test_size=0.1):
     return X_train, X_test, y_train, y_test
 
 def separar_dataset_train_val_holdout(x, y):
-    X_train, X_test, y_train, y_test = separar_dataset(x, y, test_size=0.4)
-    X_test, X_holdout, y_test, y_holdout = separar_dataset(X_test, y_test, test_size=0.25)
+    X_train, X_test, y_train, y_test = separar_dataset(x, y, test_size=0.3)
+    X_test, X_holdout, y_test, y_holdout = separar_dataset(X_test, y_test, test_size=0.333)
     return X_train, X_test, X_holdout, y_train, y_test, y_holdout
 
 def encontrar_hiperparametros_RGSCV(clf, params, x_np, y_np):
