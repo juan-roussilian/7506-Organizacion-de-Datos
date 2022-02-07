@@ -191,7 +191,7 @@ id,tiene_alto_valor_adquisitivo
 925,no
 931,no
 934,no
-936,si
+936,no
 937,no
 938,no
 939,no
@@ -201,7 +201,7 @@ id,tiene_alto_valor_adquisitivo
 977,no
 981,no
 983,no
-993,si
+993,no
 1001,si
 1007,no
 1015,no
@@ -221,7 +221,7 @@ id,tiene_alto_valor_adquisitivo
 1067,no
 1069,no
 1071,no
-1075,si
+1075,no
 1077,no
 1079,no
 1083,no
@@ -344,7 +344,7 @@ id,tiene_alto_valor_adquisitivo
 1592,no
 1596,no
 1598,si
-1599,si
+1599,no
 1608,no
 1613,no
 1616,no
@@ -564,7 +564,7 @@ id,tiene_alto_valor_adquisitivo
 2683,no
 2685,no
 2692,no
-2698,si
+2698,no
 2700,si
 2721,no
 2723,no
@@ -918,7 +918,7 @@ id,tiene_alto_valor_adquisitivo
 4420,no
 4421,no
 4431,no
-4437,si
+4437,no
 4444,no
 4445,no
 4455,no
@@ -942,7 +942,7 @@ id,tiene_alto_valor_adquisitivo
 4599,no
 4602,no
 4608,no
-4611,si
+4611,no
 4614,no
 4615,no
 4639,no
@@ -983,7 +983,7 @@ id,tiene_alto_valor_adquisitivo
 4772,no
 4788,no
 4791,no
-4797,si
+4797,no
 4800,no
 4805,no
 4822,si
@@ -1014,7 +1014,7 @@ id,tiene_alto_valor_adquisitivo
 4918,no
 4925,no
 4931,no
-4932,si
+4932,no
 4934,no
 4940,si
 4944,no
@@ -1064,7 +1064,7 @@ id,tiene_alto_valor_adquisitivo
 5134,no
 5137,no
 5147,no
-5151,si
+5151,no
 5152,si
 5156,no
 5159,no
@@ -1458,7 +1458,7 @@ id,tiene_alto_valor_adquisitivo
 7075,no
 7083,no
 7091,no
-7092,si
+7092,no
 7098,no
 7100,si
 7106,no
@@ -1782,7 +1782,7 @@ id,tiene_alto_valor_adquisitivo
 8835,no
 8837,no
 8854,no
-8858,no
+8858,si
 8861,no
 8863,no
 8864,no
@@ -2196,7 +2196,7 @@ id,tiene_alto_valor_adquisitivo
 10903,no
 10907,no
 10912,si
-10916,si
+10916,no
 10931,no
 10932,no
 10933,no
@@ -2245,7 +2245,7 @@ id,tiene_alto_valor_adquisitivo
 11127,no
 11133,si
 11143,no
-11147,si
+11147,no
 11149,no
 11151,si
 11171,si
@@ -3054,7 +3054,7 @@ id,tiene_alto_valor_adquisitivo
 15150,no
 15164,no
 15168,no
-15169,si
+15169,no
 15179,no
 15181,no
 15198,si
@@ -3177,7 +3177,7 @@ id,tiene_alto_valor_adquisitivo
 15744,no
 15745,no
 15746,si
-15751,si
+15751,no
 15758,no
 15759,no
 15762,no
@@ -3225,10 +3225,10 @@ id,tiene_alto_valor_adquisitivo
 15936,no
 15939,no
 15940,no
-15955,si
+15955,no
 15959,no
-15971,si
-15972,si
+15971,no
+15972,no
 15976,no
 15985,no
 15996,no
@@ -3259,7 +3259,7 @@ id,tiene_alto_valor_adquisitivo
 16121,no
 16124,no
 16125,no
-16133,si
+16133,no
 16142,no
 16146,no
 16149,no
@@ -3448,7 +3448,7 @@ id,tiene_alto_valor_adquisitivo
 17087,no
 17091,no
 17092,no
-17093,si
+17093,no
 17099,no
 17105,no
 17107,no
@@ -3476,7 +3476,7 @@ id,tiene_alto_valor_adquisitivo
 17175,no
 17176,no
 17182,no
-17203,si
+17203,no
 17208,no
 17213,no
 17218,no
@@ -3511,7 +3511,7 @@ id,tiene_alto_valor_adquisitivo
 17388,no
 17399,no
 17400,no
-17409,si
+17409,no
 17411,no
 17415,no
 17417,no
@@ -3522,7 +3522,7 @@ id,tiene_alto_valor_adquisitivo
 17460,no
 17462,no
 17466,no
-17471,si
+17471,no
 17478,no
 17479,no
 17481,no
@@ -3542,7 +3542,7 @@ id,tiene_alto_valor_adquisitivo
 17549,no
 17556,no
 17561,no
-17565,si
+17565,no
 17590,no
 17598,no
 17601,no
@@ -3552,7 +3552,7 @@ id,tiene_alto_valor_adquisitivo
 17642,no
 17644,no
 17651,no
-17654,si
+17654,no
 17665,no
 17666,no
 17670,no
@@ -3564,7 +3564,7 @@ id,tiene_alto_valor_adquisitivo
 17722,no
 17723,no
 17726,no
-17729,si
+17729,no
 17731,no
 17739,no
 17744,no
@@ -3604,14 +3604,14 @@ id,tiene_alto_valor_adquisitivo
 17896,no
 17901,no
 17920,no
-17923,si
+17923,no
 17937,no
 17938,no
 17945,no
 17946,no
 17954,no
 17956,no
-17964,si
+17964,no
 17971,no
 17978,no
 17980,no
@@ -3620,7 +3620,7 @@ id,tiene_alto_valor_adquisitivo
 17988,no
 17992,no
 18013,no
-18015,si
+18015,no
 18027,no
 18036,no
 18037,no
@@ -3638,7 +3638,7 @@ id,tiene_alto_valor_adquisitivo
 18085,no
 18088,no
 18094,no
-18097,si
+18097,no
 18101,no
 18106,no
 18109,no
@@ -3708,7 +3708,7 @@ id,tiene_alto_valor_adquisitivo
 18421,no
 18430,no
 18439,si
-18443,si
+18443,no
 18446,si
 18449,si
 18461,no
@@ -3902,7 +3902,7 @@ id,tiene_alto_valor_adquisitivo
 19412,no
 19414,no
 19416,no
-19421,si
+19421,no
 19429,no
 19430,no
 19433,no
@@ -3925,7 +3925,7 @@ id,tiene_alto_valor_adquisitivo
 19508,no
 19519,no
 19527,si
-19531,si
+19531,no
 19536,no
 19537,no
 19560,si
@@ -4007,7 +4007,7 @@ id,tiene_alto_valor_adquisitivo
 19960,no
 19962,si
 19965,no
-19966,si
+19966,no
 19972,no
 19978,no
 19980,no
@@ -4017,7 +4017,7 @@ id,tiene_alto_valor_adquisitivo
 20000,no
 20002,si
 20003,si
-20005,si
+20005,no
 20007,no
 20019,no
 20025,si
@@ -4082,14 +4082,14 @@ id,tiene_alto_valor_adquisitivo
 20287,no
 20291,no
 20315,no
-20317,si
+20317,no
 20318,si
 20327,si
 20341,no
 20346,no
 20347,no
 20349,no
-20352,si
+20352,no
 20353,si
 20362,si
 20369,no
@@ -4778,7 +4778,7 @@ id,tiene_alto_valor_adquisitivo
 23610,no
 23611,si
 23622,no
-23623,si
+23623,no
 23625,no
 23630,si
 23631,si
@@ -5131,7 +5131,7 @@ id,tiene_alto_valor_adquisitivo
 25484,si
 25492,no
 25497,no
-25507,si
+25507,no
 25509,no
 25518,no
 25525,no
@@ -5139,7 +5139,7 @@ id,tiene_alto_valor_adquisitivo
 25531,no
 25545,no
 25554,no
-25555,si
+25555,no
 25559,no
 25563,no
 25565,no
@@ -5224,7 +5224,7 @@ id,tiene_alto_valor_adquisitivo
 25920,no
 25925,no
 25939,no
-25952,si
+25952,no
 25953,si
 25954,si
 25955,si
@@ -5238,7 +5238,7 @@ id,tiene_alto_valor_adquisitivo
 25980,si
 25987,no
 25990,si
-25991,si
+25991,no
 25995,no
 25997,no
 26000,no
@@ -5585,7 +5585,7 @@ id,tiene_alto_valor_adquisitivo
 27674,no
 27677,si
 27678,si
-27685,si
+27685,no
 27690,no
 27692,no
 27697,no
@@ -5722,7 +5722,7 @@ id,tiene_alto_valor_adquisitivo
 28303,no
 28307,no
 28309,no
-28310,si
+28310,no
 28311,no
 28314,no
 28315,no
@@ -5838,7 +5838,7 @@ id,tiene_alto_valor_adquisitivo
 28835,no
 28845,no
 28849,no
-28854,si
+28854,no
 28855,no
 28862,no
 28870,no
@@ -5899,7 +5899,7 @@ id,tiene_alto_valor_adquisitivo
 29220,no
 29233,no
 29238,no
-29240,si
+29240,no
 29242,no
 29251,no
 29255,no
@@ -6198,7 +6198,7 @@ id,tiene_alto_valor_adquisitivo
 30762,no
 30769,si
 30780,no
-30787,si
+30787,no
 30789,no
 30796,no
 30801,no
@@ -6355,12 +6355,12 @@ id,tiene_alto_valor_adquisitivo
 31521,no
 31526,no
 31534,si
-31535,si
+31535,no
 31536,si
 31538,si
 31545,no
 31550,no
-31551,si
+31551,no
 31559,no
 31560,no
 31561,no
@@ -6387,7 +6387,7 @@ id,tiene_alto_valor_adquisitivo
 31672,no
 31673,no
 31685,si
-31690,si
+31690,no
 31691,no
 31692,no
 31696,no
@@ -6447,7 +6447,7 @@ id,tiene_alto_valor_adquisitivo
 31957,no
 31975,si
 31977,no
-31978,si
+31978,no
 31981,no
 32001,no
 32003,no
@@ -6898,7 +6898,7 @@ id,tiene_alto_valor_adquisitivo
 34208,no
 34214,no
 34217,si
-34220,si
+34220,no
 34237,si
 34238,no
 34240,no
@@ -7337,7 +7337,7 @@ id,tiene_alto_valor_adquisitivo
 36389,no
 36391,no
 36400,si
-36401,si
+36401,no
 36403,no
 36408,si
 36420,no
@@ -7460,7 +7460,7 @@ id,tiene_alto_valor_adquisitivo
 36940,no
 36943,no
 36945,no
-36958,si
+36958,no
 36967,no
 36971,no
 36973,no
@@ -8360,7 +8360,7 @@ id,tiene_alto_valor_adquisitivo
 41328,no
 41330,no
 41337,no
-41339,si
+41339,no
 41344,no
 41348,no
 41351,no
@@ -8571,7 +8571,7 @@ id,tiene_alto_valor_adquisitivo
 42317,no
 42325,no
 42327,no
-42332,si
+42332,no
 42333,no
 42334,no
 42337,no
@@ -8810,7 +8810,7 @@ id,tiene_alto_valor_adquisitivo
 43379,no
 43388,si
 43391,no
-43395,si
+43395,no
 43397,no
 43405,no
 43408,si
@@ -8844,7 +8844,7 @@ id,tiene_alto_valor_adquisitivo
 43504,no
 43507,no
 43513,no
-43516,si
+43516,no
 43525,no
 43530,no
 43533,no
@@ -8858,7 +8858,7 @@ id,tiene_alto_valor_adquisitivo
 43563,no
 43564,no
 43567,no
-43570,si
+43570,no
 43573,no
 43588,no
 43591,no
@@ -8874,7 +8874,7 @@ id,tiene_alto_valor_adquisitivo
 43641,no
 43643,no
 43647,no
-43651,si
+43651,no
 43654,no
 43662,no
 43673,si
@@ -8955,7 +8955,7 @@ id,tiene_alto_valor_adquisitivo
 44122,no
 44123,si
 44127,si
-44130,si
+44130,no
 44134,no
 44141,no
 44149,si
@@ -9076,7 +9076,7 @@ id,tiene_alto_valor_adquisitivo
 44736,si
 44757,no
 44761,si
-44770,si
+44770,no
 44773,si
 44774,no
 44778,no
@@ -9297,12 +9297,12 @@ id,tiene_alto_valor_adquisitivo
 45753,no
 45755,no
 45757,no
-45765,si
+45765,no
 45766,no
 45775,no
 45780,no
 45782,no
-45784,si
+45784,no
 45786,no
 45787,no
 45788,no
@@ -9903,7 +9903,7 @@ id,tiene_alto_valor_adquisitivo
 48732,no
 48738,si
 48741,no
-48743,si
+48743,no
 48745,si
 48747,no
 48749,no
@@ -10093,7 +10093,7 @@ id,tiene_alto_valor_adquisitivo
 49713,no
 49719,no
 49722,no
-49737,si
+49737,no
 49754,si
 49756,si
 49762,no
@@ -10112,7 +10112,7 @@ id,tiene_alto_valor_adquisitivo
 49807,no
 49811,no
 49813,no
-49818,si
+49818,no
 49826,no
 49844,no
 49846,no
@@ -10140,7 +10140,7 @@ id,tiene_alto_valor_adquisitivo
 49985,no
 49987,no
 49990,no
-50002,si
+50002,no
 50018,no
 50022,no
 50024,si
@@ -10184,7 +10184,7 @@ id,tiene_alto_valor_adquisitivo
 50204,no
 50208,no
 50210,no
-50213,si
+50213,no
 50214,no
 50218,no
 50222,no
@@ -10394,7 +10394,7 @@ id,tiene_alto_valor_adquisitivo
 51339,no
 51341,no
 51343,no
-51351,si
+51351,no
 51353,no
 51354,no
 51356,no
@@ -10427,7 +10427,7 @@ id,tiene_alto_valor_adquisitivo
 51463,si
 51467,no
 51468,no
-51472,si
+51472,no
 51480,no
 51482,no
 51486,no
@@ -10562,7 +10562,7 @@ id,tiene_alto_valor_adquisitivo
 52130,no
 52131,no
 52136,si
-52139,si
+52139,no
 52152,no
 52163,no
 52169,no
@@ -10585,13 +10585,13 @@ id,tiene_alto_valor_adquisitivo
 52249,si
 52251,si
 52254,no
-52257,si
+52257,no
 52260,no
 52266,no
 52267,si
-52272,si
-52276,si
-52280,si
+52272,no
+52276,no
+52280,no
 52283,no
 52286,si
 52289,si
@@ -10634,7 +10634,7 @@ id,tiene_alto_valor_adquisitivo
 52443,no
 52448,no
 52451,si
-52454,si
+52454,no
 52456,no
 52457,no
 52458,si
@@ -10677,7 +10677,7 @@ id,tiene_alto_valor_adquisitivo
 52639,si
 52643,si
 52644,si
-52650,si
+52650,no
 52651,si
 52657,no
 52660,no
@@ -10705,7 +10705,7 @@ id,tiene_alto_valor_adquisitivo
 52759,no
 52760,si
 52769,si
-52772,si
+52772,no
 52785,no
 52789,si
 52790,si
@@ -10722,7 +10722,7 @@ id,tiene_alto_valor_adquisitivo
 52861,no
 52863,no
 52866,no
-52870,si
+52870,no
 52877,no
 52880,si
 52883,no
@@ -10744,7 +10744,7 @@ id,tiene_alto_valor_adquisitivo
 52955,si
 52963,si
 52964,no
-52973,si
+52973,no
 52974,no
 52978,si
 52981,si
@@ -10753,7 +10753,7 @@ id,tiene_alto_valor_adquisitivo
 52994,si
 52997,si
 52998,si
-52999,si
+52999,no
 53002,no
 53004,no
 53006,no
@@ -10768,7 +10768,7 @@ id,tiene_alto_valor_adquisitivo
 53029,no
 53031,no
 53042,si
-53044,si
+53044,no
 53054,no
 53060,si
 53068,no
@@ -10801,17 +10801,17 @@ id,tiene_alto_valor_adquisitivo
 53190,no
 53195,no
 53208,si
-53214,si
+53214,no
 53224,si
 53230,no
 53231,no
 53239,no
-53245,si
+53245,no
 53246,no
 53259,no
 53264,no
 53266,si
-53270,si
+53270,no
 53272,si
 53274,si
 53285,si
@@ -10821,7 +10821,7 @@ id,tiene_alto_valor_adquisitivo
 53311,no
 53315,si
 53318,no
-53324,si
+53324,no
 53326,si
 53335,no
 53337,si
@@ -10852,7 +10852,7 @@ id,tiene_alto_valor_adquisitivo
 53469,si
 53486,no
 53487,no
-53492,si
+53492,no
 53498,no
 53506,no
 53512,no
@@ -10870,7 +10870,7 @@ id,tiene_alto_valor_adquisitivo
 53572,no
 53575,no
 53578,no
-53580,si
+53580,no
 53586,no
 53587,no
 53588,no
@@ -10900,7 +10900,7 @@ id,tiene_alto_valor_adquisitivo
 53711,no
 53715,no
 53720,si
-53721,si
+53721,no
 53723,si
 53726,si
 53727,si
@@ -11024,7 +11024,7 @@ id,tiene_alto_valor_adquisitivo
 54243,no
 54248,no
 54252,no
-54271,si
+54271,no
 54276,no
 54284,no
 54285,no
@@ -11055,7 +11055,7 @@ id,tiene_alto_valor_adquisitivo
 54409,si
 54416,si
 54418,si
-54422,si
+54422,no
 54429,si
 54433,si
 54439,no
@@ -11098,7 +11098,7 @@ id,tiene_alto_valor_adquisitivo
 54641,no
 54642,no
 54647,no
-54649,si
+54649,no
 54652,no
 54653,no
 54661,no
@@ -12601,7 +12601,7 @@ id,tiene_alto_valor_adquisitivo
 62359,no
 62367,no
 62369,si
-62370,si
+62370,no
 62376,no
 62379,no
 62380,no
@@ -13224,7 +13224,7 @@ id,tiene_alto_valor_adquisitivo
 65414,no
 65419,no
 65421,si
-65424,no
+65424,si
 65426,no
 65429,si
 65443,no
@@ -13717,7 +13717,7 @@ id,tiene_alto_valor_adquisitivo
 67888,no
 67891,no
 67893,si
-67898,no
+67898,si
 67899,no
 67904,si
 67915,si
@@ -13886,7 +13886,7 @@ id,tiene_alto_valor_adquisitivo
 68697,si
 68703,no
 68706,no
-68708,si
+68708,no
 68710,si
 68715,si
 68720,si
@@ -14016,7 +14016,7 @@ id,tiene_alto_valor_adquisitivo
 69363,no
 69365,no
 69384,no
-69387,si
+69387,no
 69393,no
 69396,no
 69401,no
@@ -14065,14 +14065,14 @@ id,tiene_alto_valor_adquisitivo
 69620,si
 69621,no
 69623,si
-69629,si
+69629,no
 69633,no
 69635,no
 69636,si
 69640,si
 69641,si
 69643,si
-69665,si
+69665,no
 69674,no
 69676,si
 69681,si
@@ -14116,11 +14116,11 @@ id,tiene_alto_valor_adquisitivo
 69825,si
 69826,si
 69831,no
-69839,no
+69839,si
 69846,no
 69848,no
-69851,si
-69865,si
+69851,no
+69865,no
 69866,no
 69879,si
 69881,no
@@ -14131,7 +14131,7 @@ id,tiene_alto_valor_adquisitivo
 69907,no
 69909,no
 69920,si
-69923,si
+69923,no
 69925,no
 69928,si
 69934,si
@@ -14140,7 +14140,7 @@ id,tiene_alto_valor_adquisitivo
 69941,no
 69945,no
 69961,no
-69964,si
+69964,no
 69968,si
 69978,no
 69983,no
@@ -14651,7 +14651,7 @@ id,tiene_alto_valor_adquisitivo
 72637,no
 72642,no
 72656,no
-72663,no
+72663,si
 72666,no
 72674,no
 72680,no
@@ -14826,7 +14826,7 @@ id,tiene_alto_valor_adquisitivo
 73473,no
 73481,no
 73482,no
-73484,si
+73484,no
 73486,no
 73488,no
 73495,no
@@ -14867,7 +14867,7 @@ id,tiene_alto_valor_adquisitivo
 73659,no
 73663,no
 73665,no
-73674,si
+73674,no
 73677,no
 73678,no
 73679,no
@@ -14962,7 +14962,7 @@ id,tiene_alto_valor_adquisitivo
 74168,si
 74175,no
 74177,no
-74179,si
+74179,no
 74185,no
 74192,no
 74215,no
@@ -15043,7 +15043,7 @@ id,tiene_alto_valor_adquisitivo
 74608,no
 74617,no
 74618,no
-74623,si
+74623,no
 74637,no
 74639,no
 74642,no
@@ -15313,7 +15313,7 @@ id,tiene_alto_valor_adquisitivo
 75948,no
 75949,no
 75959,no
-75964,no
+75964,si
 75968,no
 75969,no
 75980,si
@@ -15943,7 +15943,7 @@ id,tiene_alto_valor_adquisitivo
 79015,no
 79024,no
 79040,si
-79047,si
+79047,no
 79057,no
 79061,no
 79069,no
@@ -16594,7 +16594,7 @@ id,tiene_alto_valor_adquisitivo
 82185,no
 82186,no
 82196,si
-82208,no
+82208,si
 82215,no
 82219,si
 82224,no
@@ -16819,12 +16819,12 @@ id,tiene_alto_valor_adquisitivo
 83284,no
 83286,no
 83289,no
-83292,si
+83292,no
 83299,no
 83300,no
 83303,no
 83310,si
-83311,si
+83311,no
 83315,no
 83328,no
 83333,no
@@ -16919,7 +16919,7 @@ id,tiene_alto_valor_adquisitivo
 83931,no
 83938,no
 83941,si
-83944,si
+83944,no
 83945,si
 83949,no
 83957,no
@@ -16962,7 +16962,7 @@ id,tiene_alto_valor_adquisitivo
 84124,no
 84126,no
 84135,no
-84137,si
+84137,no
 84141,no
 84147,si
 84149,si
@@ -17168,7 +17168,7 @@ id,tiene_alto_valor_adquisitivo
 85218,si
 85225,si
 85226,no
-85251,si
+85251,no
 85252,no
 85258,no
 85259,no
@@ -17438,7 +17438,7 @@ id,tiene_alto_valor_adquisitivo
 86594,no
 86597,no
 86601,no
-86604,si
+86604,no
 86608,no
 86618,no
 86620,no
@@ -17482,7 +17482,7 @@ id,tiene_alto_valor_adquisitivo
 86782,no
 86786,no
 86806,no
-86812,si
+86812,no
 86814,si
 86817,no
 86819,no
@@ -17699,7 +17699,7 @@ id,tiene_alto_valor_adquisitivo
 87964,no
 87965,no
 87966,si
-87967,si
+87967,no
 87976,no
 87977,si
 88011,no
@@ -17837,7 +17837,7 @@ id,tiene_alto_valor_adquisitivo
 88735,no
 88739,no
 88740,no
-88751,si
+88751,no
 88754,si
 88758,no
 88761,no
@@ -17917,7 +17917,7 @@ id,tiene_alto_valor_adquisitivo
 89106,no
 89114,no
 89125,si
-89132,si
+89132,no
 89139,no
 89146,no
 89148,no
@@ -18087,11 +18087,11 @@ id,tiene_alto_valor_adquisitivo
 90028,no
 90034,no
 90038,no
-90044,si
+90044,no
 90045,si
 90054,no
 90058,no
-90061,si
+90061,no
 90062,si
 90076,no
 90079,no
@@ -18099,7 +18099,7 @@ id,tiene_alto_valor_adquisitivo
 90081,si
 90086,no
 90115,no
-90117,si
+90117,no
 90128,no
 90133,no
 90135,no
@@ -18139,10 +18139,10 @@ id,tiene_alto_valor_adquisitivo
 90308,no
 90310,no
 90315,si
-90323,si
+90323,no
 90325,no
 90328,no
-90333,si
+90333,no
 90346,no
 90349,no
 90361,si
@@ -18468,7 +18468,7 @@ id,tiene_alto_valor_adquisitivo
 91955,no
 91956,si
 91960,si
-91961,si
+91961,no
 91962,si
 91973,no
 91975,no
@@ -18618,7 +18618,7 @@ id,tiene_alto_valor_adquisitivo
 92669,no
 92678,no
 92683,no
-92686,si
+92686,no
 92689,no
 92693,no
 92700,no
@@ -18696,7 +18696,7 @@ id,tiene_alto_valor_adquisitivo
 93084,no
 93085,no
 93090,si
-93093,si
+93093,no
 93105,si
 93116,no
 93117,si
@@ -18726,7 +18726,7 @@ id,tiene_alto_valor_adquisitivo
 93219,si
 93227,no
 93228,no
-93233,si
+93233,no
 93235,no
 93241,no
 93243,si
@@ -20022,7 +20022,7 @@ id,tiene_alto_valor_adquisitivo
 99804,no
 99809,no
 99815,no
-99818,no
+99818,si
 99823,no
 99835,no
 99841,no
@@ -20148,7 +20148,7 @@ id,tiene_alto_valor_adquisitivo
 100388,si
 100389,no
 100400,no
-100410,si
+100410,no
 100432,no
 100436,si
 100438,no
@@ -20333,7 +20333,7 @@ id,tiene_alto_valor_adquisitivo
 101338,no
 101341,no
 101347,no
-101355,si
+101355,no
 101357,no
 101361,no
 101363,no
@@ -21034,7 +21034,7 @@ id,tiene_alto_valor_adquisitivo
 104744,no
 104745,no
 104766,no
-104769,no
+104769,si
 104772,no
 104780,si
 104781,no
@@ -21802,7 +21802,7 @@ id,tiene_alto_valor_adquisitivo
 108637,no
 108640,no
 108641,no
-108645,si
+108645,no
 108648,no
 108651,no
 108659,no
@@ -22194,7 +22194,7 @@ id,tiene_alto_valor_adquisitivo
 110686,no
 110702,no
 110713,no
-110717,si
+110717,no
 110718,no
 110719,no
 110722,no
@@ -22269,12 +22269,12 @@ id,tiene_alto_valor_adquisitivo
 110998,no
 111006,no
 111011,no
-111014,si
+111014,no
 111022,no
 111029,no
 111035,no
 111038,no
-111040,si
+111040,no
 111059,no
 111060,no
 111064,no
@@ -22299,15 +22299,15 @@ id,tiene_alto_valor_adquisitivo
 111132,no
 111134,no
 111135,no
-111140,si
+111140,no
 111146,no
 111148,no
 111159,no
 111166,no
 111174,no
 111175,si
-111183,si
-111184,si
+111183,no
+111184,no
 111188,no
 111192,no
 111195,no
@@ -22337,7 +22337,7 @@ id,tiene_alto_valor_adquisitivo
 111292,no
 111300,no
 111306,no
-111310,si
+111310,no
 111314,no
 111320,no
 111327,no
@@ -22345,7 +22345,7 @@ id,tiene_alto_valor_adquisitivo
 111336,no
 111337,no
 111340,no
-111347,si
+111347,no
 111356,no
 111357,no
 111363,no
@@ -22372,7 +22372,7 @@ id,tiene_alto_valor_adquisitivo
 111443,no
 111447,no
 111472,si
-111476,si
+111476,no
 111481,no
 111482,no
 111491,no
@@ -22418,7 +22418,7 @@ id,tiene_alto_valor_adquisitivo
 111747,no
 111755,no
 111761,no
-111763,si
+111763,no
 111764,no
 111774,no
 111790,si
@@ -22636,12 +22636,12 @@ id,tiene_alto_valor_adquisitivo
 112886,no
 112888,no
 112892,no
-112894,si
+112894,no
 112895,no
 112898,no
 112903,no
 112904,no
-112908,si
+112908,no
 112909,no
 112911,no
 112915,no
@@ -22651,7 +22651,7 @@ id,tiene_alto_valor_adquisitivo
 112934,no
 112942,no
 112945,si
-112946,si
+112946,no
 112951,no
 112969,no
 112970,no
@@ -22681,7 +22681,7 @@ id,tiene_alto_valor_adquisitivo
 113143,no
 113149,no
 113152,no
-113155,si
+113155,no
 113164,no
 113170,no
 113176,no
@@ -22689,14 +22689,14 @@ id,tiene_alto_valor_adquisitivo
 113178,si
 113184,no
 113196,no
-113205,si
+113205,no
 113210,no
 113213,no
 113219,si
 113222,no
 113224,si
 113225,si
-113238,si
+113238,no
 113239,si
 113242,no
 113255,no
@@ -22948,7 +22948,7 @@ id,tiene_alto_valor_adquisitivo
 114498,no
 114501,no
 114506,no
-114514,si
+114514,no
 114517,no
 114518,no
 114524,si
@@ -23494,7 +23494,7 @@ id,tiene_alto_valor_adquisitivo
 117305,si
 117308,no
 117318,no
-117320,si
+117320,no
 117327,no
 117335,no
 117338,no
@@ -23518,7 +23518,7 @@ id,tiene_alto_valor_adquisitivo
 117451,no
 117464,no
 117469,no
-117470,si
+117470,no
 117478,no
 117487,no
 117490,no
@@ -24380,7 +24380,7 @@ id,tiene_alto_valor_adquisitivo
 121715,no
 121722,no
 121725,no
-121733,no
+121733,si
 121734,si
 121748,si
 121750,no
@@ -24517,7 +24517,7 @@ id,tiene_alto_valor_adquisitivo
 122431,no
 122438,no
 122443,no
-122449,si
+122449,no
 122453,no
 122455,no
 122457,no
@@ -24597,7 +24597,7 @@ id,tiene_alto_valor_adquisitivo
 122837,no
 122838,no
 122839,no
-122850,si
+122850,no
 122852,no
 122857,no
 122859,no
@@ -24835,7 +24835,7 @@ id,tiene_alto_valor_adquisitivo
 124022,no
 124026,no
 124028,no
-124036,si
+124036,no
 124041,no
 124053,no
 124072,no
@@ -24894,7 +24894,7 @@ id,tiene_alto_valor_adquisitivo
 124323,no
 124325,no
 124329,si
-124337,si
+124337,no
 124340,no
 124341,no
 124345,no
@@ -24914,7 +24914,7 @@ id,tiene_alto_valor_adquisitivo
 124447,no
 124458,no
 124460,no
-124461,si
+124461,no
 124462,no
 124466,no
 124468,no
@@ -24980,7 +24980,7 @@ id,tiene_alto_valor_adquisitivo
 124682,no
 124686,no
 124692,no
-124693,si
+124693,no
 124701,no
 124705,no
 124707,no
@@ -25064,7 +25064,7 @@ id,tiene_alto_valor_adquisitivo
 124999,no
 125002,no
 125005,no
-125008,si
+125008,no
 125012,si
 125013,no
 125024,no
@@ -25431,7 +25431,7 @@ id,tiene_alto_valor_adquisitivo
 126979,no
 126989,no
 126995,no
-126999,si
+126999,no
 127001,si
 127002,si
 127007,no
@@ -25559,7 +25559,7 @@ id,tiene_alto_valor_adquisitivo
 127666,no
 127674,no
 127676,no
-127681,si
+127681,no
 127683,si
 127685,no
 127690,no
@@ -25605,7 +25605,7 @@ id,tiene_alto_valor_adquisitivo
 127880,no
 127891,no
 127892,si
-127898,si
+127898,no
 127911,no
 127915,no
 127922,no
@@ -25641,9 +25641,9 @@ id,tiene_alto_valor_adquisitivo
 128049,no
 128052,si
 128074,no
-128082,si
+128082,no
 128084,no
-128092,si
+128092,no
 128094,no
 128100,si
 128112,si
@@ -25664,10 +25664,10 @@ id,tiene_alto_valor_adquisitivo
 128169,si
 128177,no
 128183,no
-128184,si
-128186,si
+128184,no
+128186,no
 128195,no
-128199,si
+128199,no
 128207,no
 128208,no
 128209,no
@@ -25773,7 +25773,7 @@ id,tiene_alto_valor_adquisitivo
 128687,no
 128691,no
 128692,si
-128694,si
+128694,no
 128700,si
 128704,no
 128706,no
@@ -25801,7 +25801,7 @@ id,tiene_alto_valor_adquisitivo
 128800,no
 128805,si
 128810,no
-128832,si
+128832,no
 128836,si
 128840,no
 128843,si
@@ -25812,7 +25812,7 @@ id,tiene_alto_valor_adquisitivo
 128872,no
 128879,no
 128880,no
-128889,si
+128889,no
 128891,no
 128896,si
 128897,si
@@ -25926,7 +25926,7 @@ id,tiene_alto_valor_adquisitivo
 129403,no
 129404,si
 129406,no
-129410,si
+129410,no
 129414,no
 129421,no
 129434,no
@@ -25941,13 +25941,13 @@ id,tiene_alto_valor_adquisitivo
 129469,si
 129473,no
 129479,no
-129480,si
+129480,no
 129485,si
 129488,no
 129492,si
 129496,no
 129498,si
-129505,si
+129505,no
 129510,no
 129517,si
 129524,si
@@ -25979,7 +25979,7 @@ id,tiene_alto_valor_adquisitivo
 129631,no
 129638,no
 129639,no
-129642,si
+129642,no
 129648,no
 129651,no
 129655,no
@@ -26048,7 +26048,7 @@ id,tiene_alto_valor_adquisitivo
 129960,no
 129970,no
 129984,no
-129995,si
+129995,no
 130007,no
 130008,si
 130012,si
@@ -26192,7 +26192,7 @@ id,tiene_alto_valor_adquisitivo
 130714,si
 130718,no
 130723,si
-130727,si
+130727,no
 130728,si
 130729,no
 130733,no
@@ -26292,7 +26292,7 @@ id,tiene_alto_valor_adquisitivo
 131174,no
 131175,no
 131184,si
-131185,si
+131185,no
 131188,no
 131196,no
 131200,si
@@ -26705,7 +26705,7 @@ id,tiene_alto_valor_adquisitivo
 133262,si
 133269,no
 133270,no
-133272,si
+133272,no
 133283,no
 133284,si
 133290,no
@@ -26723,7 +26723,7 @@ id,tiene_alto_valor_adquisitivo
 133328,si
 133329,si
 133333,no
-133334,si
+133334,no
 133336,no
 133337,no
 133340,no
@@ -26888,7 +26888,7 @@ id,tiene_alto_valor_adquisitivo
 134148,no
 134152,no
 134155,no
-134163,si
+134163,no
 134170,no
 134177,no
 134179,no
@@ -27004,7 +27004,7 @@ id,tiene_alto_valor_adquisitivo
 134760,no
 134761,no
 134770,no
-134775,si
+134775,no
 134780,no
 134781,no
 134794,no
@@ -27058,7 +27058,7 @@ id,tiene_alto_valor_adquisitivo
 135042,si
 135043,no
 135048,no
-135051,si
+135051,no
 135057,no
 135060,no
 135064,no
@@ -27102,7 +27102,7 @@ id,tiene_alto_valor_adquisitivo
 135273,no
 135274,no
 135280,no
-135291,si
+135291,no
 135292,si
 135294,no
 135297,no
@@ -27201,7 +27201,7 @@ id,tiene_alto_valor_adquisitivo
 135679,no
 135686,si
 135692,no
-135700,si
+135700,no
 135702,no
 135707,no
 135713,no
@@ -27230,7 +27230,7 @@ id,tiene_alto_valor_adquisitivo
 135821,no
 135825,no
 135836,no
-135854,si
+135854,no
 135863,no
 135864,no
 135866,no
@@ -27279,7 +27279,7 @@ id,tiene_alto_valor_adquisitivo
 136115,no
 136117,no
 136119,no
-136121,si
+136121,no
 136127,no
 136134,no
 136135,no
@@ -28014,7 +28014,7 @@ id,tiene_alto_valor_adquisitivo
 139752,si
 139755,si
 139758,no
-139761,si
+139761,no
 139769,no
 139773,no
 139774,no
@@ -28075,7 +28075,7 @@ id,tiene_alto_valor_adquisitivo
 140084,no
 140086,si
 140097,si
-140099,si
+140099,no
 140100,no
 140111,si
 140112,si
@@ -28394,7 +28394,7 @@ id,tiene_alto_valor_adquisitivo
 141822,no
 141827,si
 141828,no
-141833,si
+141833,no
 141836,si
 141838,si
 141841,si
@@ -28403,7 +28403,7 @@ id,tiene_alto_valor_adquisitivo
 141849,no
 141856,si
 141857,no
-141858,si
+141858,no
 141859,no
 141865,no
 141868,no
@@ -28559,7 +28559,7 @@ id,tiene_alto_valor_adquisitivo
 142662,no
 142664,no
 142666,no
-142667,si
+142667,no
 142670,no
 142671,si
 142676,si
@@ -28617,12 +28617,12 @@ id,tiene_alto_valor_adquisitivo
 142911,no
 142933,no
 142936,no
-142938,si
+142938,no
 142939,si
 142955,no
 142964,si
 142965,si
-142970,si
+142970,no
 142977,si
 142980,si
 142983,si
@@ -28692,18 +28692,18 @@ id,tiene_alto_valor_adquisitivo
 143266,no
 143271,no
 143279,no
-143291,si
+143291,no
 143301,no
 143317,no
 143318,no
-143323,si
+143323,no
 143330,no
 143337,no
 143339,si
 143345,no
 143347,no
 143352,si
-143360,si
+143360,no
 143365,no
 143375,no
 143379,no
@@ -28775,7 +28775,7 @@ id,tiene_alto_valor_adquisitivo
 143745,si
 143765,no
 143767,no
-143770,si
+143770,no
 143775,si
 143777,si
 143782,si
